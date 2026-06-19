@@ -81,3 +81,47 @@ body {
 @media (max-width: 768px) {
   .section { padding: 64px 0; }
 }
+
+/* 404 Page */
+.not-found {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: var(--bg);
+  text-align: center;
+  padding: 24px;
+}
+
+.not-found-code {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 15vw, 9rem);
+  font-weight: 700;
+  color: var(--electric);
+  line-height: 1;
+  text-shadow: 0 0 60px var(--electric-glow);
+}
+
+.not-found-msg {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.not-found-link {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--neon);
+  text-decoration: none;
+  border: 1px solid var(--neon);
+  padding: 10px 24px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.not-found-link:hover {
+  background: var(--neon-glow);
+}

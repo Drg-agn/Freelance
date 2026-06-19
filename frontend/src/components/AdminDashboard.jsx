@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './AdminDashboard.css'
 import { Users, Mail, Phone, Calendar, RefreshCw, Lock, Eye, EyeOff } from 'lucide-react'
 
-const ADMIN_PASSWORD = 'roboai2026'
+const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'roboai2026'
 
 export default function AdminDashboard() {
   const [authed, setAuthed] = useState(false)
