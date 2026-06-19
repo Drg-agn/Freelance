@@ -1,0 +1,70 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 64px;
+  overflow: hidden;
+  position: relative;
+}
+.hero-glow {
+  position: absolute;
+  top: 10%; left: 50%;
+  transform: translateX(-50%);
+  width: 700px; height: 500px;
+  background: radial-gradient(ellipse, var(--electric-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  padding-top: 80px; padding-bottom: 80px;
+  display: flex; flex-direction: column; gap: 28px;
+  position: relative; z-index: 1;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--neon-glow);
+  border: 1px solid var(--neon);
+  color: var(--neon);
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em;
+  padding: 7px 14px; border-radius: 100px; width: fit-content;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 7vw, 5.5rem);
+  font-weight: 700; line-height: 1.05; letter-spacing: -0.03em;
+  color: var(--text); max-width: 700px;
+}
+.hero-title-accent {
+  color: var(--electric); position: relative;
+}
+.hero-title-accent::after {
+  content: ''; position: absolute;
+  bottom: 4px; left: 0; width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--electric), var(--neon));
+  border-radius: 2px;
+}
+.hero-desc {
+  font-size: 1.1rem; color: var(--text-muted);
+  max-width: 560px; line-height: 1.7;
+}
+.hero-actions {
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  margin-top: 8px;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, var(--electric) 0%, #5B87FF 100%);
+  color: #fff; font-family: var(--font-display); font-weight: 600; font-size: 1rem;
+  padding: 15px 30px; border-radius: 8px; text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 30px var(--electric-glow);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 50px var(--electric-glow);
+}
+.btn-ghost {
+  color: var(--text-muted); font-size: 0.95rem; text-decoration: none;
+  border-bottom: 1px solid var(--border); padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover { color: var(--text); border-color: var(--text-muted); }
