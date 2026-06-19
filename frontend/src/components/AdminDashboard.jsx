@@ -28,7 +28,8 @@ export default function AdminDashboard() {
     setLoading(true)
     setError('')
     try {
-      const res = await fetch('/api/enquiries')
+      const apiUrl = import.meta.env.VITE_API_URL || ''
+      const res = await fetch(`${apiUrl}/api/enquiries`)
       const data = await res.json()
       if (!res.ok) throw new Error(data.message)
       setEnquiries(data.data)
@@ -51,7 +52,6 @@ export default function AdminDashboard() {
     })
   }
 
-  // LOGIN SCREEN
   if (!authed) {
     return (
       <div className="admin-login">
@@ -80,7 +80,6 @@ export default function AdminDashboard() {
     )
   }
 
-  // DASHBOARD SCREEN
   return (
     <div className="admin-dash">
       <div className="admin-header">
